@@ -8,4 +8,5 @@ class AppRoutes {
   static const String goalScreen = '/goalScreen';
   static const String notificationRequestScreen = '/notificationRequestScreen';
   static const String workoutRoutineTimeScreen = '/workoutRoutineTimeScreen';
+  static const String subscriptionScreen = "/subscriptionScreen";
 }

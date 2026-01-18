@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:repcy/app/resources/colors.dart';
 import 'package:repcy/app/routes/app_routes.dart';
+// import 'package:repcy/app/routes/app_routes.dart';
 import 'package:repcy/app/widgets/custom_button.dart';
 
 class NotificationRequestScreen extends StatelessWidget {
@@ -50,7 +50,7 @@ class NotificationRequestScreen extends StatelessWidget {
               ),
               SizedBox(height: 10),
               LinearProgressIndicator(
-                value: 0.2,
+                value: 0.95,
                 backgroundColor: Colors.grey,
                 color: AppColors.primaryColor,
                 borderRadius: BorderRadius.circular(15),
@@ -149,7 +149,7 @@ class NotificationRequestScreen extends StatelessWidget {
               SizedBox(height: Get.height * 0.25),
               CustomButton(
                 ontap: () {
-                  Get.toNamed(AppRoutes.workoutRoutineTimeScreen);
+                  Get.toNamed(AppRoutes.subscriptionScreen);
                 },
                 isLoading: false.obs,
                 child: Text(

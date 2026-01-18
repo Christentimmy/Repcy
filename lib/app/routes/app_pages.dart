@@ -5,6 +5,7 @@ import 'package:repcy/app/modules/profile/screens/body_details_screen.dart';
 import 'package:repcy/app/modules/profile/screens/goal_screen.dart';
 import 'package:repcy/app/modules/profile/screens/workout_routine_time_screen.dart';
 import 'package:repcy/app/modules/splash/splash_screen.dart';
+import 'package:repcy/app/modules/subscription/subscription_screen.dart';
 import 'package:repcy/app/routes/app_routes.dart';
 
 class AppPages {
@@ -32,6 +33,10 @@ class AppPages {
     GetPage(
       name: AppRoutes.notificationRequestScreen,
       page: () =>  NotificationRequestScreen(),
+    ),
+    GetPage(
+      name: AppRoutes.subscriptionScreen,
+      page: () =>  SubscriptionScreen(),
     ),
     
    ];

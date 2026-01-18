@@ -42,7 +42,7 @@ class GoalScreen extends StatelessWidget {
               ),
               SizedBox(height: 10),
               LinearProgressIndicator(
-                value: 0.2,
+                value: 0.4,
                 backgroundColor: Colors.grey,
                 color: AppColors.primaryColor,
                 borderRadius: BorderRadius.circular(15),

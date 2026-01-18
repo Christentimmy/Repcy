@@ -33,7 +33,7 @@ class BodyDetailsScreen extends StatelessWidget {
               ),
               SizedBox(height: 10),
               LinearProgressIndicator(
-                value: 0.1,
+                value: 0.2,
                 backgroundColor: Colors.grey,
                 color: AppColors.primaryColor,
                 borderRadius: BorderRadius.circular(15),
