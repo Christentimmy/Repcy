@@ -198,7 +198,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 18),
+              margin: EdgeInsets.only(left: 5),
               height: 120,
               child: ListView.builder(
                 itemCount: 6,
@@ -207,7 +207,6 @@ class HomeScreen extends StatelessWidget {
                   return Container(
                     width: 140,
                     padding: EdgeInsets.all(10),
-                    margin: EdgeInsets.only(right: 10),
                     child: Stack(
                       children: [
                         ClipRRect(
