@@ -14,4 +14,5 @@ class AppRoutes {
   static const String homeScreen = "/homeScreen";
   static const String bottomNavigation = "/bottomNavigation";
   static const String caloriesScreen = "/caloriesScreen";
+  static const String restTimerScreen = "/restTimerScreen";
 }

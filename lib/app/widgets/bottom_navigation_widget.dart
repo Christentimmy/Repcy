@@ -3,13 +3,20 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:repcy/app/modules/home/screens/calories_screen.dart';
 import 'package:repcy/app/modules/home/screens/home_screen.dart';
+import 'package:repcy/app/modules/home/screens/profile_screen.dart';
+import 'package:repcy/app/modules/home/screens/rest_timer_screen.dart';
 import 'package:repcy/app/resources/colors.dart';
 
 class BottomNavigationWidget extends StatelessWidget {
   BottomNavigationWidget({super.key});
 
   final RxInt currentIndex = 0.obs;
-  final pages = [HomeScreen(), CaloriesScreen(), Container(), Container()];
+  final pages = [
+    HomeScreen(),
+    CaloriesScreen(),
+    RestTimerScreen(),
+    ProfileScreen(),
+  ];
 
   @override
   Widget build(BuildContext context) {

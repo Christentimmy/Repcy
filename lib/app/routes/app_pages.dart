@@ -3,6 +3,7 @@ import 'package:repcy/app/modules/auth/screens/login_screen.dart';
 import 'package:repcy/app/modules/auth/screens/signup_screen.dart';
 import 'package:repcy/app/modules/home/screens/calories_screen.dart';
 import 'package:repcy/app/modules/home/screens/home_screen.dart';
+import 'package:repcy/app/modules/home/screens/rest_timer_screen.dart';
 import 'package:repcy/app/modules/notification/screens/notification_request_screen.dart';
 import 'package:repcy/app/modules/onboarding/onboarding_screen.dart';
 import 'package:repcy/app/modules/profile/screens/body_details_screen.dart';
@@ -39,5 +40,6 @@ class AppPages {
       page: () => BottomNavigationWidget(),
     ),
     GetPage(name: AppRoutes.caloriesScreen, page: () => CaloriesScreen()),
+    GetPage(name: AppRoutes.restTimerScreen, page: () => RestTimerScreen()),
   ];
 }
