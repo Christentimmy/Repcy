@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:repcy/app/resources/colors.dart';
+import 'package:repcy/app/routes/app_routes.dart';
 import 'package:repcy/app/widgets/custom_button.dart';
 
 class OnboardingScreen extends StatelessWidget {
@@ -71,7 +72,7 @@ class OnboardingScreen extends StatelessWidget {
             ),
             SizedBox(height: Get.height * 0.2),
             CustomButton(
-              ontap: () {},
+              ontap: () => Get.toNamed(AppRoutes.bodyDetailsScreen),
               isLoading: false.obs,
               child: Text(
                 "Get Started",

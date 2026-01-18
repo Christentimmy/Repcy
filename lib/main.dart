@@ -25,6 +25,8 @@ class MainApp extends StatelessWidget {
           selectionHandleColor: AppColors.primaryColor,
         ),
         textTheme: GoogleFonts.poppinsTextTheme(),
+        splashFactory: NoSplash.splashFactory,
+        splashColor: Colors.transparent,
       ),
       debugShowCheckedModeBanner: false,
       initialRoute: AppRoutes.splash,
