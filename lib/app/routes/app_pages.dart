@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:repcy/app/modules/notification/screens/notification_request_screen.dart';
 import 'package:repcy/app/modules/onboarding/onboarding_screen.dart';
 import 'package:repcy/app/modules/profile/screens/body_details_screen.dart';
 import 'package:repcy/app/modules/profile/screens/goal_screen.dart';
@@ -28,5 +29,10 @@ class AppPages {
       name: AppRoutes.workoutRoutineTimeScreen,
       page: () =>  WorkoutRoutineTimeScreen(),
     ),
+    GetPage(
+      name: AppRoutes.notificationRequestScreen,
+      page: () =>  NotificationRequestScreen(),
+    ),
+    
    ];
 }

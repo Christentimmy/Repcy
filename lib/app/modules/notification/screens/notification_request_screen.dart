@@ -1,24 +1,34 @@
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:repcy/app/resources/colors.dart';
 import 'package:repcy/app/routes/app_routes.dart';
 import 'package:repcy/app/widgets/custom_button.dart';
 
-class WorkoutRoutineTimeScreen extends StatelessWidget {
-  WorkoutRoutineTimeScreen({super.key});
+class NotificationRequestScreen extends StatelessWidget {
+  NotificationRequestScreen({super.key});
 
-  final workoutRoutineTime = [
-    "1 time",
-    "2 times",
-    "3 times",
-    "4 times",
-    "5 times",
-    "6 times",
-    "7 times",
+  final RxBool isActive = false.obs;
+  final RxString selectedNotificationStyle = ''.obs;
+
+  final goals = [
+    {
+      "title": "Light",
+      "value": "Notifications only to remind you of the workout time.",
+    },
+    {
+      "title": "Moderate",
+      "value":
+          "Notifications during workout days with tips or motivational quotes.",
+    },
+    {
+      "title": "Intense",
+      "value": "Notifications everyday with tips and motivational quotes.",
+    },
   ];
 
-  final selectedRoutine = [].obs;
+  final selectedIndex = (-1).obs;
 
   @override
   Widget build(BuildContext context) {
@@ -40,14 +50,14 @@ class WorkoutRoutineTimeScreen extends StatelessWidget {
               ),
               SizedBox(height: 10),
               LinearProgressIndicator(
-                value: 0.35,
+                value: 0.2,
                 backgroundColor: Colors.grey,
                 color: AppColors.primaryColor,
                 borderRadius: BorderRadius.circular(15),
               ),
               SizedBox(height: 10),
               Text(
-                "How many times do you workout per week?",
+                "Repcy helps you not to miss any workout and keep you motivated",
                 style: GoogleFonts.poppins(
                   fontSize: 12,
                   fontStyle: FontStyle.italic,
@@ -55,70 +65,80 @@ class WorkoutRoutineTimeScreen extends StatelessWidget {
                   fontWeight: FontWeight.normal,
                 ),
               ),
-              Text(
-                "Select between 2 and 6 times per week",
-                style: GoogleFonts.poppins(
-                  fontSize: 12,
-                  fontStyle: FontStyle.italic,
-                  color: Colors.white,
-                  fontWeight: FontWeight.normal,
-                ),
+              SizedBox(height: 10),
+              Row(
+                children: [
+                  Text(
+                    "Enable notifications",
+                    style: GoogleFonts.poppins(
+                      fontSize: 15,
+                      color: Colors.white,
+                      fontWeight: FontWeight.normal,
+                    ),
+                  ),
+                  const Spacer(),
+                  Transform.scale(
+                    scale: 0.7,
+                    child: Obx(
+                      () => Switch(
+                        value: isActive.value,
+                        onChanged: (value) => isActive.toggle(),
+                        activeColor: AppColors.primaryColor,
+                      ),
+                    ),
+                  ),
+                ],
               ),
               SizedBox(height: 20),
               ListView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                itemCount: workoutRoutineTime.length,
+                itemCount: goals.length,
                 itemBuilder: (context, index) {
                   return InkWell(
                     onTap: () {
-                      if (selectedRoutine.contains(index)) {
-                        selectedRoutine.remove(index);
-                      } else if (selectedRoutine.length <= 5) {
-                        selectedRoutine.add(index);
-                      }
+                      selectedIndex.value = index;
                     },
                     child: Obx(
                       () => Container(
                         width: Get.width,
-                        margin: EdgeInsets.symmetric(vertical: 6),
+                        margin: EdgeInsets.symmetric(vertical: 10),
                         padding: EdgeInsets.symmetric(
-                          horizontal: 10,
-                          vertical: 20,
+                          horizontal: 5,
+                          vertical: 15,
                         ),
                         decoration: BoxDecoration(
-                          color: selectedRoutine.contains(index)
+                          color: selectedIndex.value == index
                               ? const Color.fromARGB(255, 255, 248, 214)
                               : Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                          border: selectedRoutine.contains(index)
+                          borderRadius: BorderRadius.circular(15),
+                          border: selectedIndex.value == index
                               ? Border.all(
                                   color: AppColors.primaryColor,
                                   width: 2,
                                 )
                               : null,
                         ),
-                        child: Row(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              workoutRoutineTime[index],
+                              goals[index]['title']!,
                               style: GoogleFonts.poppins(
                                 fontSize: 12,
                                 color: Colors.black,
-                                fontWeight: FontWeight.w700,
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
-                            const Spacer(),
-                            selectedRoutine.contains(index)
-                                ? CircleAvatar(
-                                    radius: 8,
-                                    backgroundColor: Colors.white,
-                                    child: CircleAvatar(
-                                      radius: 5,
-                                      backgroundColor: AppColors.primaryColor,
-                                    ),
-                                  )
-                                : SizedBox.shrink(),
+                            Text(
+                              goals[index]['value']!,
+                              style: GoogleFonts.poppins(
+                                fontSize: 12,
+                                color: Colors.black,
+                                fontWeight: FontWeight.normal,
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -126,10 +146,10 @@ class WorkoutRoutineTimeScreen extends StatelessWidget {
                   );
                 },
               ),
-              SizedBox(height: Get.height * 0.06),
+              SizedBox(height: Get.height * 0.25),
               CustomButton(
                 ontap: () {
-                  Get.toNamed(AppRoutes.notificationRequestScreen);
+                  Get.toNamed(AppRoutes.workoutRoutineTimeScreen);
                 },
                 isLoading: false.obs,
                 child: Text(
