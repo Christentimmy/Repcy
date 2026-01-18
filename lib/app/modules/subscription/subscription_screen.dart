@@ -138,7 +138,7 @@ class SubscriptionScreen extends StatelessWidget {
               SizedBox(height: Get.height * 0.1),
               CustomButton(
                 ontap: () {
-                  Get.toNamed(AppRoutes.workoutRoutineTimeScreen);
+                  Get.toNamed(AppRoutes.signupScreen);
                 },
                 isLoading: false.obs,
                 child: Text(
