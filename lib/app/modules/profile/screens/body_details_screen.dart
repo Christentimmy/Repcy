@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:repcy/app/resources/colors.dart';
+import 'package:repcy/app/routes/app_routes.dart';
 import 'package:repcy/app/widgets/custom_button.dart';
 import 'package:repcy/app/widgets/custom_textfield.dart';
 
@@ -32,7 +33,7 @@ class BodyDetailsScreen extends StatelessWidget {
               ),
               SizedBox(height: 10),
               LinearProgressIndicator(
-                value: 0.15,
+                value: 0.1,
                 backgroundColor: Colors.grey,
                 color: AppColors.primaryColor,
                 borderRadius: BorderRadius.circular(15),
@@ -41,7 +42,7 @@ class BodyDetailsScreen extends StatelessWidget {
               Text(
                 "Please provide the information below",
                 style: GoogleFonts.poppins(
-                  fontSize: 10,
+                  fontSize: 12,
                   fontStyle: FontStyle.italic,
                   color: Colors.white,
                   fontWeight: FontWeight.normal,
@@ -178,10 +179,10 @@ class BodyDetailsScreen extends StatelessWidget {
               ),
               SizedBox(height: Get.height * 0.25),
               CustomButton(
-                ontap: () {},
+                ontap: () => Get.toNamed(AppRoutes.goalScreen),
                 isLoading: false.obs,
                 child: Text(
-                  "Next",
+                  "Continue",
                   style: GoogleFonts.poppins(
                     fontSize: 15,
                     color: Colors.white,
