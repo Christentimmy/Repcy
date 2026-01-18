@@ -6,8 +6,8 @@ import 'package:repcy/app/routes/app_routes.dart';
 import 'package:repcy/app/widgets/custom_button.dart';
 import 'package:repcy/app/widgets/custom_textfield.dart';
 
-class SignupScreen extends StatelessWidget {
-  SignupScreen({super.key});
+class LoginScreen extends StatelessWidget {
+  LoginScreen({super.key});
 
   final formKey = GlobalKey<FormState>();
 
@@ -40,7 +40,7 @@ class SignupScreen extends StatelessWidget {
             ),
             Center(
               child: Text(
-                "Create Account",
+                "Welcome back!!",
                 style: GoogleFonts.poppins(
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
@@ -54,11 +54,24 @@ class SignupScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CustomTextField(hintText: "Full Name"),
-                  SizedBox(height: Get.height * 0.02),
                   CustomTextField(hintText: "Email"),
                   SizedBox(height: Get.height * 0.02),
                   CustomTextField(hintText: "Password"),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "Forgot Password?",
+                          style: GoogleFonts.poppins(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                   SizedBox(height: Get.height * 0.1),
                 ],
               ),
@@ -67,7 +80,7 @@ class SignupScreen extends StatelessWidget {
               ontap: () {},
               isLoading: false.obs,
               child: Text(
-                "Create profile",
+                "login",
                 style: GoogleFonts.poppins(
                   fontSize: 15,
                   fontWeight: FontWeight.w500,
@@ -80,13 +93,13 @@ class SignupScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Already have an account?",
+                  "Don't have an account?",
                   style: GoogleFonts.poppins(color: Colors.white),
                 ),
                 TextButton(
-                  onPressed: () => Get.toNamed(AppRoutes.loginScreen),
+                  onPressed: () => Get.toNamed(AppRoutes.signupScreen),
                   child: Text(
-                    "Login",
+                    "SignUp",
                     style: GoogleFonts.poppins(
                       color: AppColors.primaryColor,
                       fontWeight: FontWeight.w700,

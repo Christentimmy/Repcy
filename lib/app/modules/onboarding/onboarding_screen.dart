@@ -85,7 +85,7 @@ class OnboardingScreen extends StatelessWidget {
             ),
             SizedBox(height: 10),
             CustomButton(
-              ontap: () {},
+              ontap: () => Get.toNamed(AppRoutes.loginScreen),
               bgColor: Colors.transparent,
               border: Border.all(width: 1, color: AppColors.primaryColor),
               isLoading: false.obs,
