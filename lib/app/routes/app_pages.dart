@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:repcy/app/modules/auth/screens/login_screen.dart';
 import 'package:repcy/app/modules/auth/screens/signup_screen.dart';
+import 'package:repcy/app/modules/home/screens/home_screen.dart';
 import 'package:repcy/app/modules/notification/screens/notification_request_screen.dart';
 import 'package:repcy/app/modules/onboarding/onboarding_screen.dart';
 import 'package:repcy/app/modules/profile/screens/body_details_screen.dart';
@@ -47,6 +48,10 @@ class AppPages {
     GetPage(
       name: AppRoutes.loginScreen,
       page: () =>  LoginScreen(),
+    ),
+    GetPage(
+      name: AppRoutes.homeScreen,
+      page: () =>  HomeScreen(),
     ),
    ];
 }

@@ -77,7 +77,7 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
             CustomButton(
-              ontap: () {},
+              ontap: () => Get.toNamed(AppRoutes.homeScreen),
               isLoading: false.obs,
               child: Text(
                 "login",

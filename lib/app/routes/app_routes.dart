@@ -11,4 +11,5 @@ class AppRoutes {
   static const String subscriptionScreen = "/subscriptionScreen";
   static const String signupScreen = "/signupScreen";
   static const String loginScreen = "/loginScreen";
+  static const String homeScreen = "/homeScreen";
 }
