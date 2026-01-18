@@ -10,6 +10,7 @@ import 'package:repcy/app/modules/profile/screens/workout_routine_time_screen.da
 import 'package:repcy/app/modules/splash/splash_screen.dart';
 import 'package:repcy/app/modules/subscription/subscription_screen.dart';
 import 'package:repcy/app/routes/app_routes.dart';
+import 'package:repcy/app/widgets/bottom_navigation_widget.dart';
 
 class AppPages {
    static final routes = <GetPage>[
@@ -52,6 +53,10 @@ class AppPages {
     GetPage(
       name: AppRoutes.homeScreen,
       page: () =>  HomeScreen(),
+    ),
+    GetPage(
+      name: AppRoutes.bottomNavigation,
+      page: () =>  BottomNavigationWidget(),
     ),
    ];
 }

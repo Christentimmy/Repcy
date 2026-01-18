@@ -54,9 +54,15 @@ class LoginScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CustomTextField(hintText: "Email"),
+                  CustomTextField(
+                    hintText: "Email",
+                    textStyle: GoogleFonts.poppins(color: Colors.white),
+                  ),
                   SizedBox(height: Get.height * 0.02),
-                  CustomTextField(hintText: "Password"),
+                  CustomTextField(
+                    hintText: "Password",
+                    textStyle: GoogleFonts.poppins(color: Colors.white),
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
@@ -77,7 +83,7 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
             CustomButton(
-              ontap: () => Get.toNamed(AppRoutes.homeScreen),
+              ontap: () => Get.toNamed(AppRoutes.bottomNavigation),
               isLoading: false.obs,
               child: Text(
                 "login",

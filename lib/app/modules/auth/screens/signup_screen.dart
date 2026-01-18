@@ -54,17 +54,26 @@ class SignupScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CustomTextField(hintText: "Full Name"),
+                  CustomTextField(
+                    hintText: "Full Name",
+                    textStyle: GoogleFonts.poppins(color: Colors.white),
+                  ),
                   SizedBox(height: Get.height * 0.02),
-                  CustomTextField(hintText: "Email"),
+                  CustomTextField(
+                    hintText: "Email",
+                    textStyle: GoogleFonts.poppins(color: Colors.white),
+                  ),
                   SizedBox(height: Get.height * 0.02),
-                  CustomTextField(hintText: "Password"),
+                  CustomTextField(
+                    hintText: "Password",
+                    textStyle: GoogleFonts.poppins(color: Colors.white),
+                  ),
                   SizedBox(height: Get.height * 0.1),
                 ],
               ),
             ),
             CustomButton(
-              ontap: () => Get.toNamed(AppRoutes.homeScreen),
+              ontap: () => Get.toNamed(AppRoutes.bottomNavigation),
               isLoading: false.obs,
               child: Text(
                 "Create profile",
