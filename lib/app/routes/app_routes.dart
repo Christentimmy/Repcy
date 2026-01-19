@@ -18,4 +18,6 @@ class AppRoutes {
   static const String workoutSplit = "/workoutSplit";
   static const String twoDaysWorkoutScreen = "/twoDaysWorkoutScreen";
   static const String workoutProgramScreen = "/workoutProgramScreen";
+  static const String workoutDayDetailsScreen = "/workoutDayDetailsScreen";
+  static const String workoutPlayerScreen = "/workoutPlayerScreen";
 }

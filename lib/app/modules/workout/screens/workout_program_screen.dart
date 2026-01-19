@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
+import 'package:repcy/app/routes/app_routes.dart';
 
 class WorkoutProgramScreen extends StatefulWidget {
   const WorkoutProgramScreen({super.key});
@@ -12,7 +13,7 @@ class _WorkoutProgramScreenState extends State<WorkoutProgramScreen> {
   int currentWeek = 1;
   int completedDays = 0;
   int totalDays = 28;
-  
+
   // Track completion status for each week and day
   Map<int, Set<int>> completedWorkouts = {
     1: {}, // Week 1
@@ -37,19 +38,17 @@ class _WorkoutProgramScreenState extends State<WorkoutProgramScreen> {
                   children: [
                     _buildMotivationCard(),
                     const SizedBox(height: 20),
-                    ...List.generate(4, (index) => _buildWeekSection(index + 1)),
+                    ...List.generate(
+                      4,
+                      (index) => _buildWeekSection(index + 1),
+                    ),
                     const SizedBox(height: 20),
                   ],
                 ),
               ),
             ],
           ),
-          Positioned(
-            left: 0,
-            right: 0,
-            bottom: 0,
-            child: _buildNextButton(),
-          ),
+          Positioned(left: 0, right: 0, bottom: 0, child: _buildNextButton()),
         ],
       ),
     );
@@ -225,10 +224,12 @@ class _WorkoutProgramScreenState extends State<WorkoutProgramScreen> {
                   color: isCurrentWeek
                       ? const Color(0xFFFFC107)
                       : isFutureWeek
-                          ? Colors.grey[600]
-                          : Colors.grey[400],
+                      ? Colors.grey[600]
+                      : Colors.grey[400],
                   border: Border.all(
-                    color: isCurrentWeek ? const Color(0xFFFFC107) : Colors.grey[600]!,
+                    color: isCurrentWeek
+                        ? const Color(0xFFFFC107)
+                        : Colors.grey[600]!,
                     width: 2,
                   ),
                 ),
@@ -253,7 +254,9 @@ class _WorkoutProgramScreenState extends State<WorkoutProgramScreen> {
                       left: BorderSide(
                         color: Colors.grey[700]!,
                         width: 2,
-                        style: isFutureWeek ? BorderStyle.solid : BorderStyle.solid,
+                        style: isFutureWeek
+                            ? BorderStyle.solid
+                            : BorderStyle.solid,
                       ),
                     ),
                   ),
@@ -272,7 +275,9 @@ class _WorkoutProgramScreenState extends State<WorkoutProgramScreen> {
                     Text(
                       'Week $weekNumber',
                       style: TextStyle(
-                        color: isCurrentWeek ? const Color(0xFFFFC107) : Colors.grey[400],
+                        color: isCurrentWeek
+                            ? const Color(0xFFFFC107)
+                            : Colors.grey[400],
                         fontSize: 20,
                         fontWeight: FontWeight.w700,
                       ),
@@ -295,7 +300,11 @@ class _WorkoutProgramScreenState extends State<WorkoutProgramScreen> {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(16),
                   ),
-                  child: _buildWeekGrid(weekNumber, isCurrentWeek, isFutureWeek),
+                  child: _buildWeekGrid(
+                    weekNumber,
+                    isCurrentWeek,
+                    isFutureWeek,
+                  ),
                 ),
               ],
             ),
@@ -339,7 +348,12 @@ class _WorkoutProgramScreenState extends State<WorkoutProgramScreen> {
     );
   }
 
-  Widget _buildDayCircle(int week, int day, bool isCurrentWeek, bool isFutureWeek) {
+  Widget _buildDayCircle(
+    int week,
+    int day,
+    bool isCurrentWeek,
+    bool isFutureWeek,
+  ) {
     final isCompleted = completedWorkouts[week]?.contains(day) ?? false;
     final isActive = isCurrentWeek && !isFutureWeek;
 
@@ -355,6 +369,7 @@ class _WorkoutProgramScreenState extends State<WorkoutProgramScreen> {
                   completedDays++;
                 }
               });
+              Get.toNamed(AppRoutes.workoutDayDetailsScreen);
             }
           : null,
       child: Container(
@@ -365,8 +380,8 @@ class _WorkoutProgramScreenState extends State<WorkoutProgramScreen> {
           color: isCompleted
               ? const Color(0xFFFFC107)
               : isFutureWeek
-                  ? const Color(0xFFE5E5EA)
-                  : Colors.white,
+              ? const Color(0xFFE5E5EA)
+              : Colors.white,
           border: Border.all(
             color: isActive ? const Color(0xFFFFC107) : const Color(0xFFE5E5EA),
             width: 2,
@@ -379,8 +394,8 @@ class _WorkoutProgramScreenState extends State<WorkoutProgramScreen> {
               color: isCompleted
                   ? Colors.white
                   : isFutureWeek
-                      ? Colors.grey[400]
-                      : const Color(0xFFFFC107),
+                  ? Colors.grey[400]
+                  : const Color(0xFFFFC107),
               fontSize: 16,
               fontWeight: FontWeight.w700,
             ),
@@ -398,10 +413,7 @@ class _WorkoutProgramScreenState extends State<WorkoutProgramScreen> {
       height: 24,
       decoration: BoxDecoration(
         color: isCompleted ? const Color(0xFFFFC107) : Colors.white,
-        border: Border.all(
-          color: const Color(0xFFE5E5EA),
-          width: 2,
-        ),
+        border: Border.all(color: const Color(0xFFE5E5EA), width: 2),
         borderRadius: BorderRadius.circular(4),
       ),
       child: isCompleted
