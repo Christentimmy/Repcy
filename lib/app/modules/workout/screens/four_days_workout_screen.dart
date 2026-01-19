@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class TwoDaysWorkoutScreen extends StatefulWidget {
-  const TwoDaysWorkoutScreen({super.key});
+class FourDaysWorkoutScreen extends StatefulWidget {
+  const FourDaysWorkoutScreen({super.key});
 
   @override
-  State<TwoDaysWorkoutScreen> createState() => _TwoDaysWorkoutScreenState();
+  State<FourDaysWorkoutScreen> createState() => _FourDaysWorkoutScreenState();
 }
 
-class _TwoDaysWorkoutScreenState extends State<TwoDaysWorkoutScreen> {
+class _FourDaysWorkoutScreenState extends State<FourDaysWorkoutScreen> {
   final Map<String, String> schedule = {
     'Monday': 'Full Body',
     'Tuesday': 'Rest',
@@ -80,7 +80,7 @@ class _TwoDaysWorkoutScreenState extends State<TwoDaysWorkoutScreen> {
           const Expanded(
             child: Center(
               child: Text(
-                'Workout',
+                '2 to 3 days workout',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,

@@ -164,7 +164,8 @@ class HomeScreen extends StatelessWidget {
             ),
             SizedBox(height: Get.height * 0.03),
             InkWell(
-              onTap: () => Get.toNamed(AppRoutes.workoutSplit),
+              // onTap: () => Get.toNamed(AppRoutes.workoutSplit),
+              onTap: () => Get.toNamed(AppRoutes.twoDaysWorkoutScreen),
               child: Container(
                 margin: EdgeInsets.symmetric(horizontal: 18),
                 padding: EdgeInsets.symmetric(horizontal: 20),
