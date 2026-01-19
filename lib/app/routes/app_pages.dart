@@ -12,6 +12,7 @@ import 'package:repcy/app/modules/profile/screens/workout_routine_time_screen.da
 import 'package:repcy/app/modules/splash/splash_screen.dart';
 import 'package:repcy/app/modules/subscription/subscription_screen.dart';
 import 'package:repcy/app/modules/workout/screens/two_days_workout_screen.dart';
+import 'package:repcy/app/modules/workout/screens/workout_program_screen.dart';
 import 'package:repcy/app/modules/workout/screens/workout_split_screen.dart';
 import 'package:repcy/app/routes/app_routes.dart';
 import 'package:repcy/app/widgets/bottom_navigation_widget.dart';
@@ -45,5 +46,6 @@ class AppPages {
     GetPage(name: AppRoutes.restTimerScreen, page: () => RestTimerScreen()),
     GetPage(name: AppRoutes.workoutSplit, page: () => WorkoutSplitScreen()),
     GetPage(name: AppRoutes.twoDaysWorkoutScreen, page: () => TwoDaysWorkoutScreen()),
+    GetPage(name: AppRoutes.workoutProgramScreen, page: () => WorkoutProgramScreen()),
   ];
 }

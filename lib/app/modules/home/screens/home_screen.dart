@@ -77,66 +77,69 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: Get.height * 0.03),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 18),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                color: Color(0xFFFFBFF7),
-              ),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Full Body Workout",
-                            style: GoogleFonts.poppins(
-                              fontSize: 17,
-                              fontWeight: FontWeight.w700,
-                              color: Colors.black,
+            InkWell(
+              onTap: () => Get.toNamed(AppRoutes.workoutProgramScreen),
+              child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 18),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: Color(0xFFFFBFF7),
+                ),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Full Body Workout",
+                              style: GoogleFonts.poppins(
+                                fontSize: 17,
+                                fontWeight: FontWeight.w700,
+                                color: Colors.black,
+                              ),
                             ),
-                          ),
-                          Text(
-                            "Tone - Balanced",
-                            style: GoogleFonts.poppins(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.black,
+                            Text(
+                              "Tone - Balanced",
+                              style: GoogleFonts.poppins(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black,
+                              ),
                             ),
-                          ),
-                          SizedBox(height: Get.height * 0.02),
-                          Text(
-                            "Progress 20%",
-                            style: GoogleFonts.poppins(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.black,
+                            SizedBox(height: Get.height * 0.02),
+                            Text(
+                              "Progress 20%",
+                              style: GoogleFonts.poppins(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black,
+                              ),
                             ),
-                          ),
-                          SizedBox(height: 5),
-                          LinearProgressIndicator(
-                            value: 0.2,
-                            color: AppColors.primaryColor,
-                            backgroundColor: Colors.grey,
-                          ),
-                        ],
+                            SizedBox(height: 5),
+                            LinearProgressIndicator(
+                              value: 0.2,
+                              color: AppColors.primaryColor,
+                              backgroundColor: Colors.grey,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                  Container(
-                    width: 100,
-                    height: 150,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(14),
-                      color: Color(0xFFEBC20E).withValues(alpha: 0.3),
+                    Container(
+                      width: 100,
+                      height: 150,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(14),
+                        color: Color(0xFFEBC20E).withValues(alpha: 0.3),
+                      ),
+                      child: Image.asset("assets/images/dumbbell.png"),
                     ),
-                    child: Image.asset("assets/images/dumbbell.png"),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             SizedBox(height: Get.height * 0.03),
@@ -209,58 +212,61 @@ class HomeScreen extends StatelessWidget {
                 itemCount: 6,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  return Container(
-                    width: 140,
-                    padding: EdgeInsets.all(10),
-                    child: Stack(
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(15),
-                          child: Image.asset(
-                            "assets/images/young.png",
-                            fit: BoxFit.cover,
-                            width: 140,
-                          ),
-                        ),
-                        Positioned.fill(
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                              gradient: LinearGradient(
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter,
-                                colors: [Colors.transparent, Colors.black],
-                              ),
+                  return InkWell(
+                    onTap: () => Get.toNamed(AppRoutes.workoutProgramScreen),
+                    child: Container(
+                      width: 140,
+                      padding: EdgeInsets.all(10),
+                      child: Stack(
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(15),
+                            child: Image.asset(
+                              "assets/images/young.png",
+                              fit: BoxFit.cover,
+                              width: 140,
                             ),
                           ),
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Center(
-                              child: Text(
-                                "Full Body",
-                                style: GoogleFonts.poppins(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.white,
+                          Positioned.fill(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                gradient: LinearGradient(
+                                  begin: Alignment.topCenter,
+                                  end: Alignment.bottomCenter,
+                                  colors: [Colors.transparent, Colors.black],
                                 ),
                               ),
                             ),
-                            Center(
-                              child: Text(
-                                "Workout Challenge",
-                                style: GoogleFonts.poppins(
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.white,
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Center(
+                                child: Text(
+                                  "Full Body",
+                                  style: GoogleFonts.poppins(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white,
+                                  ),
                                 ),
                               ),
-                            ),
-                            SizedBox(height: 10),
-                          ],
-                        ),
-                      ],
+                              Center(
+                                child: Text(
+                                  "Workout Challenge",
+                                  style: GoogleFonts.poppins(
+                                    fontSize: 10,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(height: 10),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   );
                 },
