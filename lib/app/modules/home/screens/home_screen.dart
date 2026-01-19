@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:repcy/app/resources/colors.dart';
+import 'package:repcy/app/routes/app_routes.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -162,27 +163,30 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: Get.height * 0.03),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 18),
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              height: 55,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                color: Color(0xFFF9F9F9F0).withValues(alpha: 0.94),
-              ),
-              child: Row(
-                children: [
-                  Text(
-                    "Create a Workout Split",
-                    style: GoogleFonts.poppins(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black,
+            InkWell(
+              onTap: () => Get.toNamed(AppRoutes.workoutSplit),
+              child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 18),
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                height: 55,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: Color(0xFFF9F9F9F0).withValues(alpha: 0.94),
+                ),
+                child: Row(
+                  children: [
+                    Text(
+                      "Create a Workout Split",
+                      style: GoogleFonts.poppins(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.black,
+                      ),
                     ),
-                  ),
-                  Spacer(),
-                  Icon(Icons.add, size: 18, color: Color(0xFFEBC20E)),
-                ],
+                    Spacer(),
+                    Icon(Icons.add, size: 18, color: Color(0xFFEBC20E)),
+                  ],
+                ),
               ),
             ),
             SizedBox(height: Get.height * 0.03),

@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -13,9 +11,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
   int selectedTabIndex = 0;
   double currentWeight = 140.0;
   double goalWeight = 140.0;
-  
+
   final List<String> tabs = ['Weight', 'Workout', 'Stats', 'PRs', 'Photos'];
-  
+
   // Sample weight data for chart
   final List<WeightEntry> weightData = [
     WeightEntry(date: '31 Dec', weight: 145.0),
@@ -33,6 +31,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
         child: Column(
           children: [
             _buildHeader(),
+            _buildPointsBar(),
+            _buildTabs(),
             Expanded(
               child: Container(
                 margin: const EdgeInsets.all(16),
@@ -42,8 +42,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
                 child: Column(
                   children: [
-                    _buildPointsBar(),
-                    _buildTabs(),
                     _buildWeightStats(),
                     Expanded(child: _buildChart()),
                   ],
@@ -78,11 +76,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               shape: BoxShape.circle,
               border: Border.all(color: Colors.white, width: 3),
             ),
-            child: const Icon(
-              Icons.person,
-              size: 50,
-              color: Color(0xFF1C1C1E),
-            ),
+            child: const Icon(Icons.person, size: 50, color: Color(0xFF1C1C1E)),
           ),
           const SizedBox(height: 12),
           const Text(
@@ -124,10 +118,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
       child: Row(
         children: [
-          const Text(
-            '🏆',
-            style: TextStyle(fontSize: 20),
-          ),
+          const Text('🏆', style: TextStyle(fontSize: 20)),
           const SizedBox(width: 8),
           const Text(
             '0 point',
@@ -154,10 +145,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ),
                 SizedBox(width: 4),
-                Text(
-                  '💡',
-                  style: TextStyle(fontSize: 16),
-                ),
+                Text('💡', style: TextStyle(fontSize: 16)),
               ],
             ),
           ),
@@ -236,10 +224,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       children: [
         Text(
           label,
-          style: const TextStyle(
-            color: Colors.black54,
-            fontSize: 13,
-          ),
+          style: const TextStyle(color: Colors.black54, fontSize: 13),
         ),
         const SizedBox(height: 4),
         Text(
@@ -312,21 +297,15 @@ class WeightChartPainter extends CustomPainter {
       ..color = const Color(0xFFE5E5EA)
       ..strokeWidth = 1;
 
-    final textPainter = TextPainter(
-      textDirection: TextDirection.ltr,
-    );
+    final textPainter = TextPainter(textDirection: TextDirection.ltr);
 
     // Y-axis labels and lines
     final weights = [180, 160, 140, 120, 100];
     for (int i = 0; i < weights.length; i++) {
       final y = size.height * i / (weights.length - 1);
-      
+
       // Draw line
-      canvas.drawLine(
-        Offset(40, y),
-        Offset(size.width, y),
-        linePaint,
-      );
+      canvas.drawLine(Offset(40, y), Offset(size.width, y), linePaint);
 
       // Draw label
       textPainter.text = TextSpan(
@@ -345,13 +324,10 @@ class WeightChartPainter extends CustomPainter {
     final spacing = (size.width - 40) / (weightData.length - 1);
     for (int i = 0; i < weightData.length; i++) {
       final x = 40 + (spacing * i);
-      
+
       textPainter.text = TextSpan(
         text: weightData[i].date,
-        style: const TextStyle(
-          color: Colors.black54,
-          fontSize: 10,
-        ),
+        style: const TextStyle(color: Colors.black54, fontSize: 10),
       );
       textPainter.layout();
       textPainter.paint(

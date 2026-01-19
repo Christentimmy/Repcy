@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:repcy/app/modules/home/screens/calories_screen.dart';
 import 'package:repcy/app/modules/home/screens/home_screen.dart';
-import 'package:repcy/app/modules/home/screens/profile_screen.dart';
+import 'package:repcy/app/modules/profile/screens/profile_screen.dart';
 import 'package:repcy/app/modules/home/screens/rest_timer_screen.dart';
 import 'package:repcy/app/resources/colors.dart';
 

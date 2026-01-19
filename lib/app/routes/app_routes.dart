@@ -15,4 +15,6 @@ class AppRoutes {
   static const String bottomNavigation = "/bottomNavigation";
   static const String caloriesScreen = "/caloriesScreen";
   static const String restTimerScreen = "/restTimerScreen";
+  static const String workoutSplit = "/workoutSplit";
+  static const String twoDaysWorkoutScreen = "/twoDaysWorkoutScreen";
 }
